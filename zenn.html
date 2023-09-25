@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zennブログフィード</title>
+    <!-- スタイリングを追加 -->
+    <style>
+        /* フィードコンテナ全体 */
+        #rss-feed {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 記事タイトル */
+        #rss-feed h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* 記事リンク */
+        #rss-feed a {
+            text-decoration: none;
+            color: #0078d4;
+        }
+
+        /* 記事リンクのホバーエフェクト */
+        #rss-feed a:hover {
+            text-decoration: underline;
+        }
+
+        /* 記事本文 */
+        #rss-feed p {
+            font-size: 1em;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        /* 記事の日付 */
+        #rss-feed .pubDate {
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <!-- フィードを表示する要素 -->
+    <div id="rss-feed"></div>
+
+    <!-- JavaScriptでRSSフィードを読み込む -->
+    <script>
+        const feedUrl = 'https://zenn.dev/mapash/feed'; // あなたのZennブログのRSSフィードURLを設定
+
+        fetch(feedUrl)
+            .then(response => response.text())
+            .then(data => {
+                const feedContainer = document.getElementById('rss-feed');
+                feedContainer.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('RSSフィードの読み込みエラー', error);
+            });
+    </script>
+</body>
+</html>

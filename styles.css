@@ -168,3 +168,43 @@ footer {
   background-size: cover;
 }
 
+/* フィードコンテナ全体 */
+#rss-feed {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 600px; /* フィードの最大幅を設定 */
+  margin: 0 auto; /* 中央寄せにする */
+  font-family: Arial, sans-serif;
+}
+
+/* 記事タイトル */
+#rss-feed h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+/* 記事リンク */
+#rss-feed a {
+  text-decoration: none;
+  color: #0078d4; /* リンクの色を指定 */
+}
+
+/* 記事リンクのホバーエフェクト */
+#rss-feed a:hover {
+  text-decoration: underline;
+}
+
+/* 記事本文 */
+#rss-feed p {
+  font-size: 1em;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/* 記事の日付 */
+#rss-feed .pubDate {
+  font-size: 0.9em;
+  color: #888;
+}
+
+
